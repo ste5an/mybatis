@@ -1,6 +1,5 @@
-CREATE TABLE IF NOT EXISTS users (
-    user_id VARCHAR(10) PRIMARY KEY NOT NULL,
-    id VARCHAR(10) NOT NULL,
-    name VARCHAR(100) NOT NULL,
-    salary VARCHAR(10) DEFAULT NULL
+CREATE TABLE users (
+  id int NOT NULL PRIMARY KEY,
+  name varchar(100) NOT NULL,
+  age varchar(20) NOT NULL
 );
