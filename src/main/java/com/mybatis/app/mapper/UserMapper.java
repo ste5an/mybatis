@@ -17,7 +17,7 @@ public interface UserMapper {
     @Insert("INSERT INTO users(id, name, age) values (#{id}, #{name}, #{age})")
     public Integer addUser(User user);
 
-    @Delete("DELETE FROM users WHERE ID (#{id})")
+    @Delete("DELETE FROM users WHERE ID = (#{id})")
     public void deleteUserById(int id);
 
 }

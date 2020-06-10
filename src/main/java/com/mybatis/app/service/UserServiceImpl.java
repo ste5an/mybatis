@@ -16,7 +16,6 @@ public class UserServiceImpl implements UserService {
 
     private static final Logger logger = LoggerFactory.getLogger(UserService.class);
 
-
     @Autowired
     UserMapper userMapper;
 
@@ -29,12 +28,22 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<User> findUserById(int id) {
+        List<User> userId = userMapper.findById(id);
+        logger.info("Get user by Id from DB: {}", userId);
         return userMapper.findById(id);
     }
 
     @Override
     public Integer addUser(User user) {
+        logger.info("Save user to DB: {}", user);
         return userMapper.addUser(user);
     }
+
+    @Override
+    public void deleteUser(int id) {
+        logger.info("Delete user by Id from DB: {}", id);
+        userMapper.deleteUserById(id);
+    }
+
 
 }

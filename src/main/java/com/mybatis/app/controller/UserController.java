@@ -4,6 +4,7 @@ import com.mybatis.app.model.User;
 import com.mybatis.app.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
@@ -28,6 +29,11 @@ public class UserController {
     @PostMapping("/save")
     public Integer saveUser(@RequestBody User user) {
         return userService.addUser(user);
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public void deleteById(@PathVariable("id") int id) {
+        userService.deleteUser(id);
     }
 
 }
