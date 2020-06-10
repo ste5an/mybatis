@@ -6,7 +6,7 @@ CREATE TABLE users (
   age varchar(20) NOT NULL
 );
 
-Далее для тестировния можно воспользоваться Postman и выполнить следующие запросы:
+Далее для тестировния нужно воспользоваться Postman и выполнить следующие запросы:
 
 POST: http://localhost:8080/rest/user/save
 
